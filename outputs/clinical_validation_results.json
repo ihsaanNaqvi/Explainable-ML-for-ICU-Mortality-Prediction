@@ -1,0 +1,37 @@
+{
+  "concordance_scores": {
+    "sofa": {
+      "mean": 0.22399999999999995,
+      "std": 0.0869329243344162,
+      "min": 0.0,
+      "max": 0.6
+    },
+    "saps_i": {
+      "mean": 0.4976666666666667,
+      "std": 0.15576014324024687,
+      "min": 0.0,
+      "max": 0.8
+    }
+  },
+  "calibration": {
+    "mean_error": 0.19490401446819305,
+    "std_error": 0.23473341763019562
+  },
+  "hypothesis_testing": {
+    "sofa": {
+      "spearman_r": -0.05074100487451787,
+      "p_value": 0.2145675456678864,
+      "interpretation": "Negative correlation means high concordance \u2192 better calibration"
+    },
+    "saps_i": {
+      "spearman_r": 0.13924187518989997,
+      "p_value": 0.0006255708484472816,
+      "interpretation": "Negative correlation means high concordance \u2192 better calibration"
+    }
+  },
+  "interpretation": {
+    "high_concordance_threshold": 0.6,
+    "hypothesis": "Patients with high SHAP-SOFA/SAPS-I concordance have better-calibrated risk estimates",
+    "conclusion": "p-value < 0.05 supports hypothesis (SHAP learns clinically meaningful patterns)"
+  }
+}

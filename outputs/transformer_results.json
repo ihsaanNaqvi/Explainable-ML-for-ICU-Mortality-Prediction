@@ -1,0 +1,44 @@
+{
+  "metrics": {
+    "auroc": 0.8542098762555056,
+    "auprc": 0.5097867259768052,
+    "sensitivity": 0.5301204819277109,
+    "positive_predictivity": 0.5301204819277109,
+    "score1": 0.5301204819277109,
+    "score1_threshold": 0.5841313600540161,
+    "hosmer_lemeshow_h": 165.16904489864518,
+    "test_size": 600,
+    "true_positives": 44,
+    "false_positives": 39,
+    "true_negatives": 478,
+    "false_negatives": 39
+  },
+  "training": {
+    "best_epoch": 16,
+    "best_val_auprc": 0.39924122780876964,
+    "total_epochs": 41
+  },
+  "model_info": {
+    "model_type": "TimeAwareTransformer",
+    "n_input_channels": 74,
+    "input_layout": "37 normalised values + 37 missingness flags",
+    "d_model": 64,
+    "n_heads": 4,
+    "n_layers": 4,
+    "ff_dim": 256,
+    "dropout": 0.1,
+    "n_params": 205153,
+    "focal_loss": {
+      "alpha": 0.8614285737276077,
+      "gamma": 2.0
+    }
+  },
+  "hyperparams": {
+    "batch_size": 64,
+    "lr": 0.0003,
+    "weight_decay": 0.0005,
+    "n_epochs": 100,
+    "patience": 25,
+    "max_grad_norm": 1.0
+  }
+}

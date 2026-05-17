@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "auroc": 0.8797511127682879,
+    "auprc": 0.5384404602992888,
+    "sensitivity": 0.5542168674698795,
+    "positive_predictivity": 0.5287356321839081,
+    "score1": 0.5287356321839081,
+    "hosmer_lemeshow_h": 28.64997673034668,
+    "test_size": 600,
+    "true_positives": 46,
+    "false_positives": 41,
+    "true_negatives": 476,
+    "false_negatives": 37
+  },
+  "model_info": {
+    "model_type": "XGBClassifier",
+    "n_features": 227,
+    "feature_breakdown": {
+      "temporal_statistics": 185,
+      "missingness_rates": 37,
+      "general_descriptors": 6
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Model,AUROC,AUPRC,Sensitivity,+Predictivity,Score1 (E1),HL-H (E2)
+SAPS-I (Baseline),—,—,—,—,0.3097,35.21 *
+XGBoost,0.8798 *,0.5384 *,0.5422 *,0.5422 *,0.5422 *,37.67
+TCN,0.8191,0.4250,0.4458,0.4253,0.4253,205.78
+Transformer (Proposed),0.8542,0.5098,0.5301,0.5301,0.5301,165.17

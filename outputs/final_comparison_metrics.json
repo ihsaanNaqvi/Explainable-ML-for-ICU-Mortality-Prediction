@@ -1,0 +1,33 @@
+{
+  "saps_i_baseline": {
+    "score1": 0.3097,
+    "hl_h": 35.21
+  },
+  "models": {
+    "XGBoost": {
+      "auroc": 0.8798,
+      "auprc": 0.5384,
+      "sensitivity": 0.5422,
+      "positive_predictivity": 0.5422,
+      "score1": 0.5422,
+      "hl_h": 37.67
+    },
+    "TCN": {
+      "auroc": 0.8191,
+      "auprc": 0.425,
+      "sensitivity": 0.4458,
+      "positive_predictivity": 0.4253,
+      "score1": 0.4253,
+      "hl_h": 205.78
+    },
+    "Transformer": {
+      "auroc": 0.8542,
+      "auprc": 0.5098,
+      "sensitivity": 0.5301,
+      "positive_predictivity": 0.5301,
+      "score1": 0.5301,
+      "hl_h": 165.17
+    }
+  },
+  "note": "Metrics recomputed from live inference on the test split. SAPS-I values from the PhysioNet 2012 challenge paper (Goldberger et al.)."
+}

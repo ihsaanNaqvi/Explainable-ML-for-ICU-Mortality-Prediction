@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"d:\\\\icu-xai\" -Exclude \".venv\" -Recurse -File | Where-Object {$_.Extension -in @\\('.py', '.ipynb', '.yaml', '.yml', '.json', '.toml', '.cfg', '.md', '.txt'\\)} | Select-Object @{N='Path';E={$_.FullName}} | Sort-Object Path)"
+    ]
+  }
+}
