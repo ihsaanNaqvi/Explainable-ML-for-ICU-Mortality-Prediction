@@ -1,0 +1,42 @@
+# Python virtual environment — 1.5 GB, contains Windows-specific binaries
+# (torch_cpu.dll, xgboost.dll, llvmlite.dll all > GitHub's 100 MB hard limit).
+# Recreate with: python -m venv .venv && pip install -r requirements.txt
+.venv/
+venv/
+env/
+ENV/
+
+# Python build / cache artefacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
