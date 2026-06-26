@@ -40,3 +40,6 @@ eggs/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# MS Office lock / temp files
+~$*

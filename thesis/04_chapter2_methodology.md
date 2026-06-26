@@ -20,7 +20,7 @@ For each patient *p*, each variable *v*, and each hour *h ∈ {0, ..., 47}* rela
 
 A binary tensor *M ∈ {0,1}^(4000×48×37)* is constructed in parallel, with *M[p, h, v] = 1* iff at least one observation of variable *v* was recorded for patient *p* in hour *h*. The mask is concatenated with the value tensor along the variable axis, producing a (4000, 48, 74) tensor that is the actual input to the deep models. This explicit encoding of *when measurements were taken* is the single most informative architectural choice in the pipeline, as the ablation study of Section 3.6 will demonstrate.
 
-![Figure 2.1 — Per-variable missingness profile across the 48-hour window of the PhysioNet 2012 Set-A cohort. Variables are sorted by overall observation rate; the heatmap makes visible the strongly bimodal pattern in which a small group of variables (vital signs, GCS) is sampled densely while laboratory measurements are sampled at unit-driven intervals.](../outputs/figures/thesis/ch3_missingness_profile.png){ width=85% }
+![Figure 2.1 — Per-variable missingness profile across the 48-hour window of the PhysioNet 2012 Set-A cohort. Variables are partitioned into laboratory tests (top block, 24 variables sorted from sparsest to densest) and vital signs (bottom block, 13 variables, same ordering). The heatmap makes visible the bimodal pattern in which a small core of variables (HR 3.9 %, Temp 4.8 %, GCS 5.3 %, Urine 6.8 %) is sampled almost every hour, while laboratory measurements are sampled at unit-driven intervals of four to twelve hours, with admission-hour missingness substantially higher than steady-state missingness for every variable.](../outputs/figures/thesis/fig2_1_missingness_FIXED.png){ width=88% }
 
 ### 2.2.3 Imputation and normalisation
 
@@ -75,7 +75,7 @@ Four pre-norm Transformer encoder layers follow [Xiong et al., 2020], each with 
 
 In the spirit of BERT [Devlin et al., 2019], a learnable [CLS] vector is prepended to the encoded sequence. After the encoder stack, the contextualised CLS vector is projected through a two-layer MLP (64 → 32 → 1) to produce the mortality logit. Total parameter count is 205 153.
 
-![Figure 2.2 — Schematic of the Time-Aware Transformer. The (48 × 74) input is projected to model dimension 64, summed with the learnable sinusoidal Time-Aware Positional Encoding, prepended with a CLS token, and passed through four pre-norm encoder layers. The contextualised CLS vector feeds a two-layer MLP that emits the mortality logit.](../outputs/figures/thesis/ch4_architecture_diagram.png){ width=85% }
+![Figure 2.2 — Schematic of the Time-Aware Transformer. The (48 × 74) input is projected to d = 64 via a shared linear layer, summed with the learnable sinusoidal TAPE, prepended with a [CLS] token (sequence length becomes 49), and passed through four pre-norm encoder layers (Multi-Head Self-Attention with h = 4 heads, Feed-Forward 64 → 256 → 64, residual Add & LayerNorm after each sub-layer). The contextualised CLS vector feeds a two-layer MLP (64 → 32 → 1) that emits the mortality logit.](../outputs/figures/thesis/fig2_2_transformer_FIXED.png){ width=85% }
 
 ### 2.5.5 Focal loss
 
